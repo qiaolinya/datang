@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+#denglu_bg {
+	width: 750px;
+	height: 600px;
+	background: url(../img/denglu_bg.gif) no-repeat center;
+	margin-left: 120px;
+}
+
+#dl_content {
+	padding-top: 270px;
+	padding-left: 80px;
+}
+
+#dl_content_line1 {
+	margin-bottom: -10px;
+	font-size: 24px;;
+	color: #000;
+	font-face: 黑体；
+}
+
+#dl_content #dl_content_line1 {
+	padding-left: 50px;
+}
+
+#dl_content .pd {
+	padding-top: 10px;
+	color: #000;
+}
