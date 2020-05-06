@@ -359,7 +359,7 @@ public class BaseDAO {
 			ps.setInt(2, pagesize);
 			ResultSet rs=ps.executeQuery();
 			while (rs.next()) {
-				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getString(9),rs.getInt(10)));
+				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getInt(9),rs.getInt(10)));
 				
 			}
 		} catch (Exception e) {
@@ -377,7 +377,7 @@ public class BaseDAO {
 			ps.setInt(2, pagesize);
 			ResultSet rs=ps.executeQuery();
 			while (rs.next()) {
-				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getString(9),rs.getInt(10)));
+				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getInt(9),rs.getInt(10)));
 				
 			}
 		} catch (Exception e) {

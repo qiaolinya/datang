@@ -1,5 +1,5 @@
 function taskdetails(){
-	document.getElementById("task").action="emp_planlist";
+	document.getElementById("task").action="taskdetails";
 	document.getElementById("task").submit();
 	
 }
