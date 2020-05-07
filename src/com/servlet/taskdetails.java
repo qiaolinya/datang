@@ -36,7 +36,10 @@ public class taskdetails extends HttpServlet {
 		System.out.println(id);	
 		   request.getSession().setAttribute("id", id);  
 		List<Task> tasklist=dao.getList(Task.class, "where taskid="+id);
-		
+		int Implperson=Integer.parseInt(tasklist.get(0).getImplperson());
+		System.out.println("Implperson= "+Implperson);
+		String imname=dao.getNameById(Implperson);
+		tasklist.get(0).setImplperson(imname);
 		if (tasklist.size()>0) {
 			 request.setAttribute("tasklist", tasklist); 
 		        request.setAttribute("tasklistsize", tasklist.size()); 

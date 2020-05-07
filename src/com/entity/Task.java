@@ -8,7 +8,7 @@ public class Task {
 	private String endtime;
 	private String realbegintime;
 	private String realendtime;
-	private Integer implperson; // 实施人
+	private String implperson; // 实施人
 	private Integer state;
 	private Integer creater; // 制定人
 	public Integer getTaskid() {
@@ -53,10 +53,10 @@ public class Task {
 	public void setRealendtime(String realendtime) {
 		this.realendtime = realendtime;
 	}
-	public Integer getImplperson() {
+	public String getImplperson() {
 		return implperson;
 	}
-	public void setImplperson(Integer implperson) {
+	public void setImplperson(String implperson) {
 		this.implperson = implperson;
 	}
 	public Integer getState() {
@@ -81,7 +81,7 @@ public class Task {
 		this.taskid=taskid;
 	}
 	public Task(Integer taskid, String taskname, String depict, String begintime, String endtime, String realbegintime,
-			String realendtime, Integer implperson, Integer state, Integer creater) {
+			String realendtime, String implperson, Integer state, Integer creater) {
 		super();
 		this.taskid = taskid;
 		this.taskname = taskname;

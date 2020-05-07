@@ -22,7 +22,7 @@
 							</tr>
 							<tr height="40">
 								<td class="tb_top">
-									<strong>任务描述</strong>
+									<strong>项目描述</strong>
 								</td>
 								<td class="tb_mid" colspan="3">
 									${task.depict}
