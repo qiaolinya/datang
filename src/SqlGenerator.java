@@ -14,9 +14,9 @@ public class SqlGenerator {
  
 	public static void main(String[] args) {
  
-		String className = "com.entity";
+		String className = "entity";
 		List<String> allClasses = getAllClasses(
-				"D:\\eclipse project\\datang\\src\\com\\entity");
+				"D:\\eclipse project\\datang-master\\src");
 		// 获取包下的所有类名称
 		String prefix = "com";
 		String sql = generateSql(className);

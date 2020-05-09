@@ -9,7 +9,7 @@ public class Plan {
 	private Integer taskid; // 任务id
 	private String isfeedback;
 	private String state;
-	private Integer feedback;
+	private String feedback;
 	private Integer creater; // 计划制定人
 	public Integer getPlanid() {
 		return planid;
@@ -59,10 +59,10 @@ public class Plan {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public Integer getFeedback() {
+	public String getFeedback() {
 		return feedback;
 	}
-	public void setFeedback(Integer feedback) {
+	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
 	public Integer getCreater() {
@@ -72,7 +72,7 @@ public class Plan {
 		this.creater = creater;
 	}
 	public Plan(Integer planid, String planname, String planinfo, String begintime, String endtime, Integer taskid,
-			String isfeedback, String state, Integer feedback, Integer creater) {
+			String isfeedback, String state, String feedback, Integer creater) {
 		super();
 		this.planid = planid;
 		this.planname = planname;
@@ -97,7 +97,7 @@ public class Plan {
 		this.isfeedback = isfeedback;
 		this.state = state;
 	}
-	public Plan(String planname, String planinfo, String begintime, String endtime, Integer taskid, String isfeedback,String state,Integer feedback,Integer creater) {
+	public Plan(String planname, String planinfo, String begintime, String endtime, Integer taskid, String isfeedback,String state,String feedback,Integer creater) {
 		super();
 		this.planname = planname;
 		this.planinfo = planinfo;

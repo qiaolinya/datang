@@ -41,7 +41,7 @@ public class admin_changeManager extends HttpServlet {
 		List<Employee> userlist=(List<Employee>)hs.getAttribute("userlist");
 		String name=null;
 		String[] bosses=null;
-		if(userlist.get(0).getBoss()!=null) {
+		if(userlist.get(0).getBoss()!=0) {
 		//name=userlistAll.get(userlist.get(0).getBoss()-1).getName();	
 			int id=userlist.get(0).getBoss();
 			System.out.println(id);
@@ -50,7 +50,7 @@ public class admin_changeManager extends HttpServlet {
 		String[] bossAll=new String[500];
 		int a=0;
 		for (int i = 0; i < userlistAll.size(); i++) {
-			if(userlistAll.get(i).getBoss()==null) {
+			if(userlistAll.get(i).getBoss()==0) {
 				bossAll[a]=userlistAll.get(i).getName();
 				a++;
 			}
@@ -61,11 +61,9 @@ public class admin_changeManager extends HttpServlet {
 		}
 		}
 		
-
-		
-		
-		Integer userid=userlist.get(0).getUserid();
-		hs.setAttribute("userid", userid);
+	
+//		Integer userid=bosslistAll.get(temp).getUserid();
+//		System.out.println("获取到的主管id: "+userid);
 		//System.out.println(name);
 		//System.out.println(userlist.get(0).getBoss());
 		request.setAttribute("bossname", name);

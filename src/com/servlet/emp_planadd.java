@@ -39,10 +39,10 @@ public class emp_planadd extends HttpServlet {
 		String planDescription=request.getParameter("planDescription");
 		String planBeginDate=request.getParameter("planBeginDate");
 		String planEndDate=request.getParameter("planEndDate");
-		String state="Î´Íê³É";
-		Integer feedback=1;
+		String state="Î´ï¿½ï¿½ï¿½";
+		String feedback="1";
 		Integer creater=2;
-		String isfeedback="Î´·´À¡";
+		String isfeedback="Î´ï¿½ï¿½ï¿½ï¿½";
         Integer taskid=(Integer)session.getAttribute("taskid");
         System.out.println(taskid);
         dao.Insert(new Plan(planName,planDescription,planBeginDate,planEndDate,taskid,isfeedback,state,feedback,creater));

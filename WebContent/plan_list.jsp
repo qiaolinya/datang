@@ -7,7 +7,7 @@
 						<br />
 
 						<div class="btwz">
-							任务详细信息
+							计划详细信息
 						</div>
 						<br>
 						<form name="taskForm" method="get" action="emp_planlist" id="task">

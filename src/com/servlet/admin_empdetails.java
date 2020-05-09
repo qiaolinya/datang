@@ -37,7 +37,8 @@ public class admin_empdetails extends HttpServlet {
 		BaseDAO dao=new BaseDAO();
 		System.out.println("servlet");
 		Integer id=Integer.parseInt(request.getParameter("userid"));
-		
+		session.setAttribute("cmid", id);
+		System.out.println("admin_empdetails的userid = "+id);
 		List<Employee> userlist=dao.getList(Employee.class, "where userid="+id);
 		session.setAttribute("userlist",userlist);
 		if (userlist.size()>0) {

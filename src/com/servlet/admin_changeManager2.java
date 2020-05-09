@@ -1,6 +1,8 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,12 +34,15 @@ public class admin_changeManager2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession hs2=request.getSession();
 		BaseDAO dao=new BaseDAO();
-		Integer userid=(Integer) hs2.getAttribute("userid");
-		String bossin=request.getParameter("superId");
+		Integer userid=(Integer) hs2.getAttribute("cmid");
+		System.out.println("cm2的userid = "+userid);
+		List<Employee> bosslistAll=dao.getBossList(Employee.class);
+		Integer bossin=Integer.parseInt(request.getParameter("superId"));
+		System.out.println("bossin = "+bossin);
+		Integer bossid=bosslistAll.get(bossin-1).getUserid();
+		System.out.println("bossid = "+bossid);
 		if(bossin!=null) {
-			Integer boss=Integer.parseInt(request.getParameter("superId"));
-			System.out.println(boss);
-			dao.UpdateByUserid("employee", userid, boss);
+			dao.UpdateByUserid("employee", userid, bossid);
 		}
 		
 		

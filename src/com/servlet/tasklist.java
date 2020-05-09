@@ -32,7 +32,7 @@ public class tasklist extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-BaseDAO dao=new BaseDAO();
+		BaseDAO dao=new BaseDAO();
 		
 		String str_pagesize=request.getParameter("pagesize");
 		int pagesize=10;
@@ -59,10 +59,20 @@ BaseDAO dao=new BaseDAO();
 		}
 		
 		int index=pagesize*(page-1);
-		
-		
-		
+
 		List<Task> list=dao.getListT(index,pagesize);
+		for(int i=0;i<list.size();i++) {
+			//System.out.println("第"+(i+1)+"条 = "+list.get(i).getState());
+			if(list.get(i).getState().equals("1")) {
+				list.get(i).setState("已完成");
+				System.out.println("等于1");
+			}else if(list.get(i).getState().equals("0")) {
+				list.get(i).setState("未完成");
+				System.out.println("等于0");
+			}
+			
+		}
+		
 		
 		request.setAttribute("list", list);
 		request.setAttribute("pagesize", size);

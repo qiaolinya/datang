@@ -1,4 +1,4 @@
-import com.entity.Task;
+import com.entity.Plan;
  
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class CreateTable {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        createTable(Task.class, null);
+        createTable(Plan.class, null);
 // createTable(Book.class, null);
     }
  

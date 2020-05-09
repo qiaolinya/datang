@@ -39,7 +39,32 @@ public class BaseDAO {
 		}
 		return ar;
 	}
-
+	public static ArrayList getBossList(Class c1) {
+		ArrayList ar = new ArrayList();
+		Connection conn = JDBCUtil.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "Select * from " + c1.getSimpleName() + " where boss = 0";
+		System.out.println(sql);
+		Field[] fi = c1.getDeclaredFields();
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Object ob = c1.newInstance();// 实例化类对象
+				for (Field ff : fi) {
+					ff.setAccessible(true);
+					ff.set(ob, rs.getObject(ff.getName()));
+				}
+				ar.add(ob);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close();
+		}
+		return ar;
+	}
 	public static String getNameById(int id) {
 		Connection conn = JDBCUtil.getConnection();
 		String name=null;
@@ -89,7 +114,7 @@ public class BaseDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		String sql = "Select * from " + c1.getSimpleName() + " " + whereSql;
-		
+		System.out.println(sql);
 		Field[] fi = c1.getDeclaredFields();
 		try {
 			ps = conn.prepareStatement(sql);
@@ -229,17 +254,14 @@ public class BaseDAO {
 		return b;
 	}
 
-	public static boolean UpdateByUserid(String table, Integer userid,Integer boss) {
+	public static boolean UpdateByUserid(String table, Integer userid,Integer bossid) {
 		boolean b = false;
 		Connection conn = JDBCUtil.getConnection();
 		PreparedStatement ps = null;
-		
-		
-		String sql = "UPDATE " + table + " set boss=" +boss  + " where userid= " + userid;
+		String sql = "UPDATE " + table + " set boss=" +bossid  + " where userid= " + userid;
 		System.out.println(sql);
 		try {
 			ps = conn.prepareStatement(sql);
-			
 			int a = ps.executeUpdate();
 			if (a > 0) {
 				b = true;
@@ -359,7 +381,7 @@ public class BaseDAO {
 			ps.setInt(2, pagesize);
 			ResultSet rs=ps.executeQuery();
 			while (rs.next()) {
-				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getInt(9),rs.getInt(10)));
+				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getInt(10)));
 				
 			}
 		} catch (Exception e) {
@@ -377,7 +399,7 @@ public class BaseDAO {
 			ps.setInt(2, pagesize);
 			ResultSet rs=ps.executeQuery();
 			while (rs.next()) {
-				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getInt(9),rs.getInt(10)));
+				list.add(new Task(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getInt(10)));
 				
 			}
 		} catch (Exception e) {

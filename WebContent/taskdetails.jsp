@@ -71,6 +71,7 @@
 								</td>
 							</tr>
 						</table>
+						</c:forEach>
 						<br>
 						<hr width="520" />
 						<br>
@@ -78,8 +79,9 @@
 							实施计划
 						</div>
 						<br>
+						<form action="planlist" method="get" id="plan">
 						<table cellspacing="1" class="table">
-							<tr class="table_header">
+						<tr class="table_header">
 								<td>
 									计划名称
 								</td>
@@ -98,116 +100,35 @@
 								<td>
 								</td>
 							</tr>
+						<c:forEach items="${planlist}" var="plan">
 							<tr class="row2" onMouseOver="this.className='row1'"
 								onMouseOut="this.className='row2'">
 								<td>
-									查看任务
+									${plan.planname}
 								</td>
 								<td>
-									未完成
+									${plan.state}
 								</td>
 								<td>
-									已反馈
+									${plan.isfeedback}
 								</td>
 								<td>
-									2008年8月8日
+									${plan.begintime}
 								</td>
 								<td>
-									2008年12月12日
+									${plan.endtime}
 								</td>
-								<td>
-									<input type="radio" name="choose" onClick="getRadio(29);" />
+								<td valign="middle" align="left">
+									${plan.planid}
+										<input type="radio" name="planid"  value="${plan.planid}"/>
 								</td>
 							</tr>
-							<tr class="row2" onMouseOver="this.className='row1'"
-								onMouseOut="this.className='row2'">
-								<td>
-									查看人员
-								</td>
-								<td>
-									未完成
-								</td>
-								<td>
-									未反馈
-								</td>
-								<td>
-									2008年8月8日
-								</td>
-								<td>
-									2008年12月12日
-								</td>
-								<td>
-									<input type="radio" name="choose" onClick="getRadio(32);" />
-								</td>
-							</tr>
-							<tr class="row2" onMouseOver="this.className='row1'"
-								onMouseOut="this.className='row2'">
-								<td>
-									跟踪任务
-								</td>
-								<td>
-									未完成
-								</td>
-								<td>
-									未反馈
-								</td>
-								<td>
-									2008年8月8日
-								</td>
-								<td>
-									2008年12月12日
-								</td>
-								<td>
-									<input type="radio" name="choose" onClick="getRadio(30);" />
-								</td>
-							</tr>
-							<tr class="row2" onMouseOver="this.className='row1'"
-								onMouseOut="this.className='row2'">
-								<td>
-									调整任务
-								</td>
-								<td>
-									未完成
-								</td>
-								<td>
-									未反馈
-								</td>
-								<td>
-									2008年8月8日
-								</td>
-								<td>
-									2008年12月12日
-								</td>
-								<td>
-									<input type="radio" name="choose" onClick="getRadio(31);" />
-								</td>
-							</tr>
-							<tr class="row2" onMouseOver="this.className='row1'"
-								onMouseOut="this.className='row2'">
-								<td>
-									制定任务
-								</td>
-								<td>
-									已完成
-								</td>
-								<td>
-									已反馈
-								</td>
-								<td>
-									2008年8月8日
-								</td>
-								<td>
-									2008年12月12日
-								</td>
-								<td>
-									<input type="radio" name="choose" onClick="getRadio(28);" />
-								</td>
-							</tr>
+							</c:forEach>
 						</table>
-						</c:forEach>
+						</form>>
 						<p align="right">
 							<input type="button" class="button" value="详细信息"
-								onClick="detailPlan();" />
+								onclick="plandetails();" />
 						</p>
 						<br />
 						<br />
