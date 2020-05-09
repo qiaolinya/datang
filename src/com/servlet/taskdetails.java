@@ -34,12 +34,12 @@ public class taskdetails extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BaseDAO dao=new BaseDAO();
 		Integer id=Integer.parseInt(request.getParameter("taskid"));
-		System.out.println(id);	
+		//System.out.println(id);	
 		   request.getSession().setAttribute("taskid", id);  
 		List<Task> tasklist=dao.getList(Task.class, "where taskid="+id);
-		System.out.println("tasklist的size = "+tasklist.size());
+		//System.out.println("tasklist的size = "+tasklist.size());
 		Integer Implperson=Integer.parseInt(tasklist.get(0).getImplperson());
-		System.out.println("Implperson= "+Implperson);
+		//System.out.println("Implperson= "+Implperson);
 		String imname=dao.getNameById(Implperson);
 		tasklist.get(0).setImplperson(imname);
 		if(tasklist.get(0).getState().equals("1")) {

@@ -125,7 +125,7 @@
 							</tr>
 							</c:forEach>
 						</table>
-						</form>>
+						</form>
 						<p align="right">
 							<input type="button" class="button" value="详细信息"
 								onclick="plandetails();" />

@@ -14,6 +14,7 @@ import javax.websocket.Session;
 import com.dao.BaseDAO;
 import com.entity.Employee;
 import com.entity.Plan;
+import com.entity.Task;
 
 /**
  * Servlet implementation class plandetails
@@ -34,14 +35,20 @@ public class plandetails extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("进入了plandetails");
 		HttpSession hs=request.getSession();
 		BaseDAO dao=new BaseDAO();
 		Integer planid=Integer.parseInt(request.getParameter("planid"));
 		//Integer taskid=Integer.parseInt(request.getParameter("taskid"));
-		System.out.println("planid = "+planid);
+		//System.out.println("planid = "+planid);
 		 request.getSession().setAttribute("planid", planid);  
 		List<Plan> planlist=dao.getList(Plan.class, "where planid="+planid);
-		
+		Integer taskid=planlist.get(0).getTaskid();
+		System.out.println("pd的taskid = "+taskid);
+		List<Task> tasklist=dao.getList(Task.class, "where taskid="+taskid);
+		String taskname=tasklist.get(0).getTaskname();
+		System.out.println("taskname = "+taskname);
+		planlist.get(0).setFeedback(taskname);
 		if (planlist.size()>0) {
 			 request.setAttribute("planlist", planlist); 
 		        request.getRequestDispatcher("plan_details.jsp").forward(request, response);

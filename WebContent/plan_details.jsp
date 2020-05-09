@@ -60,7 +60,7 @@
 									<strong>反馈信息：</strong>
 								</td>
 								<td class="tb_mid" colspan="3">
-									${plan.feedback}
+									${plan.isfeedback}
 								</td>
 							</tr>
 						</table>
