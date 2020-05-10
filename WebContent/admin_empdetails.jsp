@@ -99,7 +99,7 @@
 							</c:forEach>
 						<p align=right style="padding-right: 30px">
 							<input type="button" class="button" value="返回 &raquo"
-								onclick="window.location.href='admin_emplist'">
+								onclick="window.location.href='admin_emplist?pagesize=5&page=1'">
 						</p>
 						<br />
 						<br />

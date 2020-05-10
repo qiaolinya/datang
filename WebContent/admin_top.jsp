@@ -47,15 +47,6 @@
 								<a href="admin_emplist?pagesize=5&page=1">员工管理</a>
 							</li>
 							<li>
-								<a href="/cattsoft/extend.do">扩展功能</a>
-							</li>
-							<li>
-								<a href="/cattsoft/extend.do">扩展功能</a>
-							</li>
-							<li>
-								<a href="/cattsoft/extend.do">扩展功能</a>
-							</li>
-							<li>
 								<a href="login.jsp">退出系统</a>
 							</li>
 						</ul>

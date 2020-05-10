@@ -6,10 +6,9 @@ body {
 }
 
 #denglu_bg {
-	width: 750px;
-	height: 600px;
-	background: url(../img/denglu_bg.gif) no-repeat center;
-	margin-left: 120px;
+	width: 1280px;
+	height: 653px;
+	background: url(../img/denglu_bg.png) no-repeat center;
 }
 
 #dl_content {

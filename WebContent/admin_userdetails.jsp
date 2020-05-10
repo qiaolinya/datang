@@ -77,7 +77,7 @@
 						</c:forEach>
 						<p align=right style="padding-right: 30px">
 							<input type="button" class="button" value="返回 &raquo"
-								onclick="window.location.href='admin_userlist'">
+								onclick="window.location.href='admin_userlist?pagesize=5&page=1'">
 						</p>
 						<br />
 						<br />

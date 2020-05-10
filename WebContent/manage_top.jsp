@@ -37,22 +37,22 @@
 					<div id="navigation">
 						<ul>
 							<li>
-								<a href="tasklist?pagesize=5&page=1">查看任务</a>
+								<a href="tasklist?pagesize=5&page=1">查看项目</a>
 							</li>
 							<li>
-								<a href="/cattsoft/showTaskForm.do">制定任务</a>
+								<a href="/cattsoft/showTaskForm.do">制定项目</a>
 							</li>
 							<li>
-								<a href="/cattsoft/beforeAdjustTask.do">调整任务</a>
+								<a href="/cattsoft/beforeAdjustTask.do">调整项目</a>
 							</li>
 							<li>
-								<a href="/cattsoft/beforeTraceTask.do">跟踪任务</a>
+								<a href="/cattsoft/beforeTraceTask.do">跟踪项目</a>
 							</li>
 							<li>
-								<a href="/cattsoft/directorListStaff.do">查看人员</a>
+								<a href="#">查看人员</a>
 							</li>
 							<li>
-								<a href="/cattsoft/logonOff.do">退出系统</a>
+								<a href="login.jsp">退出系统</a>
 							</li>
 						</ul>
 						<img src="img/nav_bg1.gif" />

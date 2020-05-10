@@ -63,7 +63,7 @@ public class admin_changedetails extends HttpServlet {
         
         dao.UpdateByUserid(table,userid,username,name,md5pwd,boss,sex,birthday,job,entrytime,role,education,speciality,experience);
         
-        request.getRequestDispatcher("admin_userlist").forward(request, response); 
+        request.getRequestDispatcher("admin_userlist?pagesize=5&page=1").forward(request, response); 
 		
 		
 		

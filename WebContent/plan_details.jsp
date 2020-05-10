@@ -67,7 +67,7 @@
 						</c:forEach>
 						<p align=right style="padding-right: 30px">
 							<input type="button" class="button" value="返回 &raquo"
-								onclick="location='listTask.do'">
+								onclick="window.location.href='taskdetails'">
 						</p>
 						<br />
 						<br />

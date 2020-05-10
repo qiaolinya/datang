@@ -55,7 +55,7 @@ public class admin_useradd extends HttpServlet {
         
         dao.Insert(new Employee(username,name,md5pwd,sex,birthday,job,entrytime,role,education,speciality,experience));
         
-        request.getRequestDispatcher("admin_userlist").forward(request, response); 
+        request.getRequestDispatcher("admin_userlist?pagesize=5&page=1").forward(request, response); 
 	}
 
 

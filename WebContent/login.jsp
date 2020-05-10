@@ -63,7 +63,7 @@
 								验证码：
 							</td>
 							<td class="pd">
-								<img src="CodeServlet" alt="imgcode" /><input type="text" name="code"/>
+								<input type="text" name="code"/><img src="CodeServlet" alt="imgcode" />
 							</td>
 							</tr>
 					</table>

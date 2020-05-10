@@ -30,12 +30,12 @@ public class admin_userdelete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BaseDAO dao=new BaseDAO();
-		System.out.println("½øÈëÁËÉ¾³ýservlet");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½servlet");
 		Integer id=Integer.parseInt(request.getParameter("userid"));
 		
 	
 		dao.delete(Employee.class, id);
-		request.getRequestDispatcher("admin_userlist").forward(request, response); 
+		request.getRequestDispatcher("admin_userlist?pagesize=5&page=1").forward(request, response); 
 	}
 
 	/**
